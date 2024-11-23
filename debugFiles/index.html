@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<script src="./react.development.js"></script>
+<script src="./react-dom.development.js"></script>
+<script src="./babel.js"></script>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>react-project</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <div>mydata</div> -->
+    </div>
+    <!-- built files will be auto injected -->
+
+
+</body>
+
+</html>
+
+
+<script type="text/babel">
+ const ReactApp = () => {
+    const [myData, setMyData] = React.useState('11')
+
+    const doClick = () => {
+        debugger
+        // console.log(React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED)
+        setMyData(`${myData}++`)
+    }
+    return <div>{myData}<button onClick={doClick}>+</button></div>
+ }
+const root = ReactDOM.createRoot(document.getElementById('app'))
+// console.log(<ReactApp />)
+    root.render(<ReactApp />)
+</script>
